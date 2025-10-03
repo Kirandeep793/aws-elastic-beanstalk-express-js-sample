@@ -1,0 +1,15 @@
+# Ignore files for Docker build (written by Deepika)
+.git
+node_modules
+npm-debug.log
+Dockerfile.jenkins
+jenkins-casc.yaml
+.env.jenkins
+logs/
+coverage/
+*.test.js
+junit.xml
+README*
+LICENSE*
+.env
+dist

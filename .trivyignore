@@ -1,0 +1,6 @@
+
+# .trivyignore
+# Ignore specific vulnerabilities by their IDs
+# Add one vulnerability ID per line
+CVE-2023-5363
+CVE-2024-6119
