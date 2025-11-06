@@ -347,11 +347,13 @@
                 "text": "Database"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -448,13 +450,66 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "46331972-ddcd-4029-8b9a-cd6b3d262a8e",
+                  "title": "Tampering – Unauthorized Data Modification",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Attackers could change, delete, or insert data directly in the database without authorization.",
+                  "mitigation": "Use strong authentication for database access, enforce least privilege, and enable integrity checks.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": "9"
+                },
+                {
+                  "id": "14420fd5-e1a0-4d82-ae4e-179d2f2520a5",
+                  "title": "Information Disclosure – Sensitive Data Leak",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Sensitive information such as user credentials or medical data may be exposed if stored without encryption.",
+                  "mitigation": "Encrypt data at rest and in transit, and restrict access to sensitive tables.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": "8"
+                },
+                {
+                  "id": "377493ff-da5d-4b95-82e7-6b458ec96e8a",
+                  "title": "Denial of Service – Database Overload",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Heavy or malicious queries could overload the database, causing downtime or degraded performance.",
+                  "mitigation": "Optimize queries, monitor database load, and limit concurrent connections.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": "7"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 1
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -661,6 +716,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "Dr Nur Halder",
-    "threatTop": 7
+    "threatTop": 11
   }
 }
