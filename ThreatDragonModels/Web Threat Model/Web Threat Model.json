@@ -1,0 +1,27 @@
+{
+  "version": "2.5.0",
+  "summary": {
+    "title": "Web Threat Model",
+    "owner": "KIRANDEEP",
+    "description": "This threat model represents a simple three-tier web application with User Interface, Web Application, and Database components. It uses STRIDE methodology to identify threats and mitigation strategies.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": " WebApp STRIDE Diagram",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.5.0",
+        "cells": [],
+        "description": "This diagram illustrates a simple three-tier web application architecture used for threat modelling.  It consists of three main components — User Interface (UI), Web Application, and Database — connected by  data flows that represent how information moves between layers.  1. The User Interface allows end users to interact with the system by submitting inputs or requests, such as login details or form data. 2. The Web Application acts as the middle layer responsible for processing user requests, applying business logic, and communicating with the backend database. 3. The Database securely stores and retrieves data such as user credentials, application records, and session information.  Data flows are defined in both directions: - From the User Interface to the Web Application and then to the Database (for storing or retrieving data). - From the Database back to the Web Application and finally to the User Interface (for displaying results or responses).  This architecture is analysed using the STRIDE methodology to identify potential security threats (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege) for each component and its data flows."
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "Dr Nur Halder",
+    "threatTop": 0
+  }
+}
