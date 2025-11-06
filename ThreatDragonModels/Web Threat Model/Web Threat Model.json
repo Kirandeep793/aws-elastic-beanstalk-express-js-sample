@@ -131,7 +131,38 @@
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "f5c05d58-6179-46c1-9d2f-287b1df87e3f",
+                  "title": "Spoofing – Unauthorized User Login",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "An attacker may try to impersonate a legitimate user by using stolen credentials or session tokens.",
+                  "mitigation": "Implement strong authentication, use HTTPS, and enable Multi-Factor Authentication (MFA).",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": "6"
+                },
+                {
+                  "id": "9014b1e1-f587-43c0-a82f-b4cdb66818bd",
+                  "title": "Repudiation – User Denies an Action",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "A user may deny performing a transaction or login action without logs to prove it.",
+                  "mitigation": "Enable detailed server-side logging and use digital signatures for verification.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": "6"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 1
+              }
             }
           },
           {
@@ -148,8 +179,8 @@
                 "text": "Web Application"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -246,12 +277,60 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "dfb14a9e-c2a9-4a76-a245-c97cad34ad91",
+                  "title": "Tampering – SQL Injection Attack",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Attackers could inject malicious SQL queries to modify or delete records from the database.",
+                  "mitigation": "Use parameterized queries, sanitize user input, and apply web application firewalls (WAF).",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": "9"
+                },
+                {
+                  "id": "aa693f5d-190a-4f7e-bc6f-2e6e270834df",
+                  "title": "Denial of Service – Excessive Requests",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Attackers may send too many requests, exhausting server resources.",
+                  "mitigation": "Implement rate limiting, use WAF, and enable load balancing.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": "8"
+                },
+                {
+                  "id": "b6805df2-b003-468d-b871-28037ab4550f",
+                  "title": "Elevation of Privilege – Admin Panel Exploit",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "A regular user could exploit insecure endpoints to gain admin privileges.",
+                  "mitigation": "Apply role-based access control (RBAC) and secure admin endpoints.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": "9"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
@@ -582,6 +661,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "Dr Nur Halder",
-    "threatTop": 0
+    "threatTop": 7
   }
 }
