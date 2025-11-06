@@ -1,20 +1,16 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 8080;
 
-// Root route – send HTML directly
+// serve static files from public/
+app.use(express.static(path.join(__dirname, 'public')));
+
+// explicitly send index.html for root
 app.get('/', (req, res) => {
-  res.send(`
-    <html>
-      <head><title>Express App</title></head>
-      <body style="font-family: Arial; text-align: center; margin-top: 100px;">
-        <h1>My Student ID is 22094629. Welcome to Express!</h1>
-        <p>Deployed successfully on AWS Elastic Beanstalk!</p>
-      </body>
-    </html>
-  `);
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(port, () => {
-  console.log(\`App running on port \${port}\`);
+  console.log(`App running on port ${port}`);
 });
