@@ -22,26 +22,20 @@
   },
   "nodemonConfig": {
     "exec": "npm run dev",
-    "watch": [
-      "server/*",
-      "public/*"
-    ],
-    "ignore": [
-      "**/__tests__/**",
-      "*.test.js",
-      "*.spec.js"
-    ]
+    "watch": ["server/*", "public/*"],
+    "ignore": ["**/__tests__/**", "*.test.js", "*.spec.js"]
   },
-    "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
-  "jest": {
-    "testEnvironment": "node"
-  },
+  "babel": { "presets": ["@babel/preset-env"] },
+  "jest": { "testEnvironment": "node" },
   "scripts": {
-    "start": "node app.js",
+    "start": "npm run prod",
+    "build": "npm run clean && npm run transpile",
+    "server": "node ./dist-server/bin/www",
+    "dev": "NODE_ENV=development npm run server",
+    "prod": "NODE_ENV=production npm run server",
+    "transpile": "babel ./server --out-dir dist-server",
+    "clean": "rm -rf dist-server",
+    "watch:dev": "nodemon",
     "test": "jest"
   }
 }
